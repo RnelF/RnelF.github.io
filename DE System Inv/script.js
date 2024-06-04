@@ -264,7 +264,7 @@ document.getElementById('name-form').addEventListener('submit', function(event) 
     event.preventDefault(); // Prevent default form submission
 
     const name = document.getElementById('name').value.trim();
-    if (name === 'de.thammy' || name === 'de.arnel') {
+    if (name === 'de.thammy' || name === 'de.arnel' || 'de.office') {
         // Display welcome message
         const welcomeMessage = document.getElementById('welcome-message');
         welcomeMessage.textContent = `Welcome, ${name}!`;
@@ -302,56 +302,3 @@ document.getElementById('proceed-btn').addEventListener('click', function() {
 
 
 
-// Function to save data to Google Drive
-const saveToGoogleDrive = () => {
-  // Check if Google API client is loaded
-  if (typeof gapi === 'undefined') {
-    alert('Google API client not loaded. Please make sure you are connected to the internet.');
-    return;
-  }
-
-  // Check if user is authenticated
-  if (!gapi.auth2.getAuthInstance().isSignedIn.get()) {
-    alert('Please sign in with Google to save data to Google Drive.');
-    return;
-  }
-
-  // Serialize items data
-  const serializedItems = JSON.stringify(items);
-
-  // Use Google Drive API to create a file
-  const fileMetadata = {
-    'name': 'items.json', // Name of the file to be created
-    'mimeType': 'application/json'
-  };
-
-  const media = {
-    mimeType: 'application/json',
-    body: serializedItems
-  };
-
-  gapi.client.drive.files.create({
-    resource: fileMetadata,
-    media: media,
-    fields: 'id'
-  }).then(function(response) {
-    console.log('File ID:', response.result.id);
-    alert('Data saved to Google Drive successfully!');
-  }).catch(function(error) {
-    console.error('Error saving file to Google Drive:', error);
-    alert('An error occurred while saving data to Google Drive. Please try again later.');
-  });
-};
-
-// Function to load Google Drive API client
-const loadDriveApi = () => {
-  gapi.client.load('drive', 'v3', () => {
-    console.log('Google Drive API loaded.');
-    // Enable the "Save to Google Drive" button once the API is loaded
-    const saveToDriveBtn = document.getElementById('save-to-drive-btn');
-    saveToDriveBtn.removeAttribute('disabled');
-  }, () => {
-    console.error('Error loading Google Drive API.');
-    alert('An error occurred while loading Google Drive API. Please try again later.');
-  });
-};
