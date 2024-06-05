@@ -36,7 +36,9 @@ h1 {
   padding-left: 150px;
   padding-right: 150px;
   background-color: #fff;
-  margin-top:300px;
+  margin-top:800px;
+  display:flex;
+  
 }
 
 /* Search Container */
@@ -45,7 +47,7 @@ h1 {
 }
 
 #search-input {
-  width: 1178px;
+  width: 50vw;
   height: 40px;
   padding: 10px;
   font-size: 16px;
@@ -100,6 +102,7 @@ h1 {
   display: flex;
   flex-direction: column; /* Change to column direction */
   align-items: center; /* Center align items */
+  margin-bottom: 50px;
 }
 
 .additem-input {
@@ -142,10 +145,12 @@ h1 {
   color: #212529;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  
+  margin-bottom: 50px;
+  margin-left:auto;
+  margin-right:auto;
   /* Center the button horizontally */
   display: block; /* Convert to block element */
-  margin: 0 auto; /* Set left and right margin to auto */
+  
 }
 
 
