@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+	<div class='welcome-container'>
+	   <h1>Welcome to D.E. Inventory System</h1>
+		<form id="name-form" id="welcome-form">
+			<label for="name">Enter Password:</label>
+			<input type="password" id="name" required>
+			<button type="submit">Enter</button>
+		</form>
+	
+		<div id="welcome-message" style="display: none;"></div>
+		<button id="proceed-btn" style="display: none;">Proceed to the System</button>
+	</div>
+    <header style="display: none;">
+        <h1>Design Excellence Home and Office Systems co. Inventory</h1>
+    </header>
+
+    <div class="main-container" style="display: none;">
+        <div class="add-item-container" id="add-item-container" style="display: none;">
+			<input type="text" id="new-item-input" class='additem-input' placeholder="Description">
+			<input type="text" id="modelNo-input" class='additem-input' placeholder="Model No">
+			<input type="text" id="measurement-input" class='additem-input' placeholder="Measurement WxDxH">
+			<input type="text" id="color-input" class='additem-input' placeholder="Color">
+			<input type="text" id="category-input" class='additem-input' placeholder="Category">
+			<input type="number" id="inventory-input" class='additem-input' placeholder="Quantity">
+			
+			<button id="add-item-btn">Add to System</button>
+		
+		</div>
+			<button id="toggle-add-item-btn">Add New Item</button>
+		<div class='legend'>
+	
+			   CATEGORIES:
+			</p>
+			<div class="cat-list-grid">
+				<div class='cat-list-item'>Accessories</div>
+				<div class='cat-list-item'>Raw-materials</div>
+				<div class='cat-list-item'>Boards</div>
+				<div class='cat-list-item'>Laminate</div>
+				<div class='cat-list-item'>Office-Chair</div>
+				<div class='cat-list-item'>Steel-Cab</div>
+				<div class='cat-list-item'>Table-Frame</div>
+				<div class='cat-list-item'>Table-Beam</div>
+				<div class='cat-list-item'>Table-legs</div>
+				<div class='cat-list-item'>Table-top</div>
+				<div class='cat-list-item'>Executive-tables</div>
+				<div class='cat-list-item'>Leisure-chairs</div>
+			</div>
+		</div>
+
+		<div class="search-container">
+			<div class="input-container">
+				<input type="text" id="search-input" placeholder="Search Item/Model">
+				<button id="search-btn">Search</button>
+			</div>
+			<div class="search-result-container">
+				
+			</div>
+			<div id="search-result"></div>
+		</div>
+    </div>
+	
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
