@@ -183,8 +183,14 @@ searchBtn.addEventListener('click', function() {
 
 const toggleAddItemContainer = () => {
   const addItemContainer = document.getElementById('add-item-container');
+  const addNewItemBtn = document.getElementById('toggle-add-item-btn');
   addItemContainer.style.display = addItemContainer.style.display === 'none' ? 'block' : 'none';
-  document.getElementById('toggle-add-item-btn').classList.toggle('active');
+  if(addItemContainer.style.display === 'block'){
+	  addNewItemBtn.innerHTML = 'Cancel';
+  }else{
+	   addNewItemBtn.innerHTML = 'Add new Item';
+  }
+  addNewItemBtn.classList.toggle('active');
 };
 
 document.getElementById('toggle-add-item-btn').addEventListener('click', toggleAddItemContainer);
