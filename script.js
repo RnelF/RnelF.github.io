@@ -270,7 +270,7 @@ document.getElementById('name-form').addEventListener('submit', function(event) 
     event.preventDefault(); // Prevent default form submission
 
     const name = document.getElementById('name').value.trim();
-    if (name === 'de.thammy' || name === 'de.arnel' || 'de.office') {
+    if (name === 'de.thammy' || name === 'de.arnel' || 'de.office' || 'de.guest') {
         // Display welcome message
         const welcomeMessage = document.getElementById('welcome-message');
         welcomeMessage.textContent = `Welcome, ${name}!`;
